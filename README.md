@@ -27,25 +27,16 @@
 ![](https://github.com/VaIice/tving/assets/141003473/cd93612b-1007-44fd-9857-35e2a699503f)
 
 ---
-#### 테스트 화면
+#### 시리즈 및 영화 화면
 ![](https://github.com/VaIice/mbti/assets/141003473/1ce9f944-a588-4d66-8a11-2f14be83e3e2)
 
 ---
-#### 결과 화면
-![](https://github.com/VaIice/mbti/assets/141003473/e608d97a-ce5f-4865-a8d0-0c1a214fb27f)
+#### 검색창 화면
+![](https://github.com/VaIice/tving/assets/141003473/f770ef2b-875b-4868-824b-33267620e969)
 
 ---
-#### 다시 하기
-![](https://github.com/VaIice/mbti/assets/141003473/87b0432d-026f-4864-a3c9-6d1115a6605c)
-
----
-#### 카카오톡 공유
-![](https://github.com/VaIice/mbti/assets/141003473/c95dd864-b056-44fa-8237-f0340a4a2e12)
-
----
-#### 공유 결과
-![](https://github.com/VaIice/mbti/assets/141003473/f817c7b0-1d04-4eb4-9e0a-3a377a216712)
-###### 개인 정보 보호를 위해 일부 이미지를 삭제하였습니다.
+#### 상세 정보 화면
+![image](https://github.com/VaIice/tving/assets/141003473/15c76952-6232-473c-8212-f59c402d666f)
 
 ----
 🛠️ **Tools and Technologies :** <br><br>
