@@ -18,7 +18,7 @@
 
 ----
 ## 🎨 웹 디자인
-![image](https://github.com/VaIice/tving/assets/141003473/7ad6c9d0-6d0f-44e4-81b3-f26e29e5d712)
+![](https://github.com/VaIice/tving/assets/141003473/013d6cc1-592a-49b6-9020-832e97d39ae7)
 
 ----
 ## 🎞 웹 페이지 화면
