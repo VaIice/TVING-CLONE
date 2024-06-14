@@ -30,6 +30,11 @@
 ![](https://github.com/VaIice/tving/assets/141003473/e04b3985-f8ee-4275-919d-856493516247)
 
 ---
+#### 최신 검색어 클릭 화면
+![](https://github.com/VaIice/tving/assets/141003473/27388e2e-d83f-4325-b2f7-941de30591af)
+
+
+---
 #### 검색창 화면
 ![](https://github.com/VaIice/tving/assets/141003473/5f05d8c6-492a-4b69-bf96-c86b81a491d1)
 
