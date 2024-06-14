@@ -27,7 +27,7 @@
 
 ---
 #### 시리즈 및 영화 화면
-![](https://github.com/VaIice/mbti/assets/141003473/1ce9f944-a588-4d66-8a11-2f14be83e3e2)
+![](https://github.com/VaIice/tving/assets/141003473/e04b3985-f8ee-4275-919d-856493516247)
 
 ---
 #### 검색창 화면
