@@ -23,7 +23,7 @@
 ----
 ## 🎞 웹 페이지 화면
 #### 메인 화면
-![](https://github.com/VaIice/tving/assets/141003473/cd93612b-1007-44fd-9857-35e2a699503f)
+![](https://github.com/VaIice/tving/assets/141003473/85053878-0aaf-45a9-982b-3e22b073d945)
 
 ---
 #### 시리즈 및 영화 화면
@@ -31,7 +31,7 @@
 
 ---
 #### 검색창 화면
-![](https://github.com/VaIice/tving/assets/141003473/f770ef2b-875b-4868-824b-33267620e969)
+![](https://github.com/VaIice/tving/assets/141003473/5f05d8c6-492a-4b69-bf96-c86b81a491d1)
 
 ---
 #### 상세 정보 화면
