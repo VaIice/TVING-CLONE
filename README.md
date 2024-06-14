@@ -24,7 +24,7 @@
 ----
 ## 🎞 웹 페이지 화면
 #### 메인 화면
-![](https://github.com/VaIice/mbti/assets/141003473/f0a63a19-b6b5-468b-bb71-fe5dc2940a91)
+![](https://github.com/VaIice/tving/assets/141003473/cd93612b-1007-44fd-9857-35e2a699503f)
 
 ---
 #### 테스트 화면
