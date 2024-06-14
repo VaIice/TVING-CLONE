@@ -1,0 +1,83 @@
+.recentSearchBox {
+  padding-top: 3vh;
+  width: 86%;
+  margin: auto;
+  margin-left: calc(10.8%);
+}
+
+.searchListTitle {
+  color: #dedede;
+  font-weight: bold;
+  font-size: calc(1rem + 0.35vw);
+  margin-left: 2%;
+  display: inline-block;
+  padding-top: 5vh;
+}
+.searchList {
+  color: #929292;
+  list-style-type: none;
+  font-size: calc(1rem + 0.15vw);
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2%;
+}
+
+.searchData:hover {
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  padding: 0;
+}
+
+.searchDataXIcon {
+  margin-left: 1%;
+  vertical-align: -8%;
+}
+.searchDataXIcon:hover {
+  cursor: pointer;
+}
+
+.searchDeleteAllDataXIcon {
+  background-color: #808080;
+  color: #121211;
+  border-radius: 50%;
+  font-size: 1rem;
+  padding: 1px 4px 1px 3px;
+  margin-left: 0.5%;
+}
+
+.searchDeleteAllData {
+  color: #808080;
+  font-size: calc(1rem + 0.05vw);
+  margin-left: 1.2%;
+  vertical-align: 10%;
+  cursor: pointer;
+}
+
+.recentSearchImage {
+  margin-left: 4%;
+}
+
+.recentSearchTitle,
+.recentSearchTitleImageFull {
+  margin-left: 4%;
+  color: white;
+  margin-top: 1.5vh;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recentSearchTitleImageFull {
+  margin-left: 0.9%;
+}
+
+.highlight {
+  color: #ff0000;
+}

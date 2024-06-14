@@ -1,0 +1,64 @@
+.detailBox {
+  width: 88.5%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #212121;
+  justify-content: space-between;
+}
+
+.detailTitle {
+  margin-top: 5vh;
+  color: white;
+  font-size: calc(3rem);
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+
+.detailAdult {
+  background-color: #333333;
+  display: inline-block;
+  margin-left: 0.2vw;
+  color: white;
+  font-weight: bold;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  border: 2px solid #333333;
+  border-radius: 3px;
+}
+
+.detailElement {
+  display: inline-block;
+  border: 2px solid #565559;
+  margin-left: 0.5vw;
+  color: #bcbdbe;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.detailOverview {
+  color: #bcbdbe;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  margin-top: 2vh;
+  width: 45%;
+  font-weight: bold;
+  font-size: 1.15rem;
+  letter-spacing: 0.1px;
+  word-spacing: 2px;
+  line-height: 27px;
+  padding-bottom: 5%;
+}
+
+.detailPoster {
+  width: calc(10rem + 10vw);
+  border-radius: 8px;
+}
+
+.detailRightBox {
+  margin-top: 4.5vh;
+  padding-bottom: 5%;
+}

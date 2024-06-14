@@ -1,0 +1,70 @@
+.navbar {
+  height: calc(4vw + 1.5vh);
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbarGap {
+  height: calc(4vw + 1.5vh);
+  width: 100%;
+}
+
+.logo {
+  border: none;
+  background-color: transparent;
+  color: #ff135c;
+  font-size: calc(1rem + 1vw);
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 2.5%;
+}
+
+.navbarList {
+  color: #d9d9d9;
+  list-style-type: none;
+  margin-left: 2.5%;
+  cursor: pointer;
+  font-size: calc(1rem + 0.1vw);
+}
+
+.navbarList:hover {
+  color: white;
+}
+
+.searchIcon,
+.xIcon {
+  color: #d9d9d9;
+  font-size: calc(1rem + 0.5vw);
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.xIcon {
+  font-size: calc(1rem + 0.5vw);
+}
+
+.searchIcon:hover,
+.xIcon:hover {
+  color: white;
+}
+
+.profileIcon {
+  color: black;
+  padding: 10px 12px 10px 12px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: calc(1re);
+  margin-left: 2.5%;
+  margin-right: 3%;
+  cursor: pointer;
+}
+
+.noneVisibility {
+  visibility: hidden;
+}

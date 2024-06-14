@@ -1,0 +1,36 @@
+#searchInput {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  outline: none;
+  color: white;
+  font-size: calc(1.2rem + 0.5vw);
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10vh;
+  padding-right: calc(2rem + 1vw);
+  padding-bottom: 1.5vh;
+}
+
+#searchInput::placeholder {
+  color: #4d4d4d;
+  font-size: calc(1.2rem + 0.5vw);
+}
+
+.searchBox {
+  width: 75%;
+  margin: auto;
+  position: relative;
+}
+
+.searchBarIcon {
+  color: white;
+  font-size: calc(2rem + 0.5vw);
+  margin-left: auto;
+  position: absolute;
+  bottom: 1.5vh;
+  right: 0;
+  cursor: pointer;
+}
