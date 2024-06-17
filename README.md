@@ -1,5 +1,5 @@
 ## 📝 TVING 클론코딩
-##### 주제: TypeScript를 이용한 웹 사이트 만들기
+##### TypeScript을 활용한 TVING 클론코딩 웹 사이트
 
 ----
 
