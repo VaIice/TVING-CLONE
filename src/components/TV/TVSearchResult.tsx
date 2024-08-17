@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import '../../css/searchBar.css'
 import { useLocation, useNavigate } from 'react-router-dom';
-import Navbar from "../Navbar";
+import Navbar from "../Layout/Header";
 import RecentSearch from "../Search/RecentSearch";
 import { RootState, changeSearchTextInput } from "../../store/store";
 import { GetMovieResults, GetTVResults, getMovieSearch, getTVSearch } from '../../API/axios';
@@ -64,7 +64,7 @@ function TVSearchResult() {
         >
          {dataTV?.results?.slice(0, MAX_PAGES*PAGE_IMAGES + 1).map((e, index) => (
            <div key={index} className="slider" onClick={() => onClickDetail("S", e.id)}>
-             <img  src={`https://image.tmdb.org/t/p/original/${e.backdrop_path}`} alt="poster" />
+             <img  src={`https://image.tmdb.org/t/p/w250/${e.backdrop_path}`} alt="poster" />
             </div>
           ))}
         </Carousel>

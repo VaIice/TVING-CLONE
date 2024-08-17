@@ -1,11 +1,11 @@
-import '../css/navbar.css';
+import '../../css/header.css';
 import { useDispatch, useSelector } from 'react-redux';
-import '../css/searchBar.css'
-import { trueIsClickedSearchIconState, falseIsClickedSearchIconState, RootState, changeSearchTextInput, trueIsSearchResultPage, falseIsSearchResultPage } from "../store/store";
+import '../../css/searchBar.css'
+import { trueIsClickedSearchIconState, falseIsClickedSearchIconState, RootState, changeSearchTextInput, trueIsSearchResultPage, falseIsSearchResultPage } from "../../store/store";
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-function Navbar() {
+function Header() {
   const dispatch = useDispatch();
   const isClickedSearchIcon = useSelector((state: RootState) => state.isClickedSearchIcon);
   const isSearchResultPage = useSelector((state: RootState) => state.isSearchResultPage);
@@ -82,4 +82,4 @@ function Navbar() {
  )
 }
 
-export default Navbar;
+export default Header;

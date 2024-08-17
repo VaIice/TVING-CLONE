@@ -1,7 +1,7 @@
-import '../css/footer.css'
+import '../../css/footer.css'
 
 function Footer() {
- return (
+  return (
   <div className="footerBox">
     <div className="footerTextBox">
      <ul className="footerListBox">

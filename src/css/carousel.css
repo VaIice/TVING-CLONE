@@ -1,11 +1,113 @@
+.poster {
+  border-radius: 10px;
+}
+
+.activePosterBox,
+.inactivePosterBox {
+  cursor: pointer;
+  position: relative;
+  filter: brightness(0.9);
+}
+
+.PosterBox-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #242424;
+}
+
+.inactivePosterBox {
+  filter: brightness(0.4);
+}
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+
+.arrowPrevBox,
+.arrowNextBox,
+.noneArrowPrevBox,
+.noneArrowNextBox {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.arrowNextBox,
+.noneArrowNextBox {
+  right: 0;
+  top: 0;
+}
+
+.arrow {
+  color: #786f6a;
+  font-size: calc(2rem + 0.5vw);
+}
+
+.arrowPrevBox:hover .arrow,
+.arrowNextBox:hover .arrow {
+  color: #c1bcb9;
+}
+
+.noneArrowPrevBox,
+.noneArrowNextBox {
+  cursor: auto;
+}
+
+.nonePoster {
+  opacity: 0;
+}
+
+.posterTitle {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  font-size: calc(2rem + 3vw);
+  font-weight: bold;
+  top: 70%;
+  left: 5%;
+}
+
 .slider {
   margin: 15px 8px 0 8px;
+  height: 90%;
+  position: relative;
 }
 
 .slider img {
   width: 100%;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider:hover .subCarouselImage {
+  transform: translateY(-10px); /* move image up by 2px on hover */
+}
+
+.react-loading-skeleton {
+  --base-color: #212121 !important;
+  --highlight-color: #333333 !important;
+  width: 100% !important;
+}
+
+.slider-image {
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #242424;
+  aspect-ratio: 16/9;
 }
 
 .react-multi-carousel-item:first-child {
@@ -16,13 +118,13 @@
   margin-right: calc(1.5% - 5vw);
 }
 
-/* .insufficientSlidesImage {
+.insufficientSlidesImage {
   margin-left: calc(5vw - 1.5%);
 }
 
 .littleInsufficientSlidesImage {
   margin-left: calc(5vw - 1.5%);
-} */
+}
 
 .react-multi-carousel-list {
   overflow: visible !important;
@@ -33,7 +135,7 @@
 }
 
 .react-multi-carousel-track {
-  /* overflow-y: visible !important; */
+  overflow-y: visible !important;
 }
 
 .react-multi-carousel-dot-list {
@@ -62,7 +164,6 @@
   font-weight: bold;
   padding-left: 5.8%;
   z-index: -1;
-  /* display: inline-block; */
 }
 
 .carouselArrowPrevBox,
@@ -93,7 +194,7 @@
 .carouselArrow {
   color: white;
   font-size: 2rem;
-  margin: auto; /* 화살표 아이콘 수평 중앙 정렬 */
+  margin: auto;
 }
 
 .carouselArrowNextBox {
@@ -103,4 +204,9 @@
 
 .carouselArrowPrevBox {
   background: linear-gradient(to left, transparent, black);
+}
+
+.listTitle {
+  color: white;
+  font-size: calc(1.2rem + 0.25vw);
 }

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import '../../css/searchBar.css'
 import { useLocation, useNavigate } from 'react-router-dom';
-import Navbar from "../Navbar";
+import Navbar from "../Layout/Header";
 import RecentSearch from "./RecentSearch";
 import { IsSearchingFalse, IsSearchingTrue, RootState, addRecentSearchList, changeSearchTextInput, falseIsClickedSearchIconState, trueIsClickedSearchIconState } from "../../store/store";
 import { GetMovieResults, getMovieSearch } from '../../API/axios';

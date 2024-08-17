@@ -1,10 +1,19 @@
 .detailBox {
-  width: 88.5%;
-  margin: auto;
+  width: 100%;
+  padding-left: 6%;
+  padding-right: 6%;
   position: relative;
   display: flex;
-  border-bottom: 1px solid #212121;
   justify-content: space-between;
+}
+
+.detailBox::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  width: 88%;
+  border-bottom: 1px solid #212121;
 }
 
 .detailTitle {
@@ -13,6 +22,15 @@
   font-size: calc(3rem);
   font-weight: bold;
   margin-bottom: 1vh;
+}
+
+.detailTitleSkeleton {
+  margin-top: 6vh;
+  color: white;
+  font-size: calc(3rem);
+  font-weight: bold;
+  margin-bottom: 1vh;
+  width: 20% !important;
 }
 
 .detailAdult {
@@ -27,6 +45,12 @@
   border-radius: 3px;
 }
 
+.detailElementBox {
+  display: flex;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+}
+
 .detailElement {
   display: inline-block;
   border: 2px solid #565559;
@@ -39,12 +63,23 @@
   font-weight: bold;
 }
 
+.detailElementSkeleton {
+  display: inline-block;
+  margin-right: 0.5vw;
+  font-weight: bold;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  border: 2px solid #333333;
+  border-radius: 3px;
+  width: 2.5vw !important;
+}
+
 .detailOverview {
   color: #bcbdbe;
   overflow-wrap: break-word;
   text-overflow: ellipsis;
   margin-top: 2vh;
-  width: 45%;
+  max-width: 100%;
   font-weight: bold;
   font-size: 1.15rem;
   letter-spacing: 0.1px;
@@ -53,12 +88,31 @@
   padding-bottom: 5%;
 }
 
+.detailOverviewSkeleton {
+  width: 100%;
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
 .detailPoster {
-  width: calc(10rem + 10vw);
+  width: 100%;
   border-radius: 8px;
+}
+
+.detailPosterSkeleton {
+  width: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #242424;
+}
+
+.detailLeftBox {
+  width: 55%;
 }
 
 .detailRightBox {
   margin-top: 4.5vh;
   padding-bottom: 5%;
+  width: 20%;
 }
