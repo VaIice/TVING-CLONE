@@ -49,7 +49,16 @@ function MainCarousel({ data }: {data: GetMovieResults }) {
             {data?.results.slice(0, MAX_UPCOMING_INDEX + 1).map((e, index) => (
               <div key={index} className={`${movieUpcomingCurrentIndex === index ? "activePosterBox" : "inactivePosterBox"}`} onClick={() => onClickDetail(e.id)}>
                 <img loading="lazy" className={(movieUpcomingCurrentIndex <= MAX_UPCOMING_INDEX / 2 && index === MAX_UPCOMING_INDEX)
-                  || (movieUpcomingCurrentIndex >= MAX_UPCOMING_INDEX / 2 && index === 0) ? "nonePoster" : "poster"} src={`https://image.tmdb.org/t/p/w1280/${e.backdrop_path}`} alt="poster" />
+                  || (movieUpcomingCurrentIndex >= MAX_UPCOMING_INDEX / 2 && index === 0) ? "nonePoster" : "poster"}
+                        srcSet={`
+                            https://image.tmdb.org/t/p/w300/${e.backdrop_path} 300w,
+                            https://image.tmdb.org/t/p/w780/${e.backdrop_path} 780w,
+                            https://image.tmdb.org/t/p/w1280/${e.backdrop_path} 1280w
+                          `}
+                          sizes="(max-width: 767px) 300px, 
+                                (max-width: 1023px) 780px, 
+                                1280px"
+                          src={`https://image.tmdb.org/t/p/w780/${e.backdrop_path}`} alt="poster" />
                 <span className="posterTitle">{e.title}</span>
               </div>
             ))}

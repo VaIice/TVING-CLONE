@@ -58,7 +58,16 @@ function TVDetail() {
         <div className="detailOverview">{data?.overview}</div>
        </div>
        <div className="detailRightBox">
-        <img className="detailPoster" alt="poster" src={`https://image.tmdb.org/t/p/w342/${data?.poster_path}`} />
+          <img className="detailPoster" alt="poster"
+            srcSet={`
+              https://image.tmdb.org/t/p/w342/${data?.poster_path} 342w,
+              https://image.tmdb.org/t/p/w500/${data?.poster_path} 500w,
+              https://image.tmdb.org/t/p/w780/${data?.poster_path} 780w
+            `}
+            sizes="(max-width: 767px) 342px, 
+                  (max-width: 1023px) 500px, 
+                  780px"
+            src={`https://image.tmdb.org/t/p/w780/${data?.poster_path}`}/>
        </div>
       </>
    </div>

@@ -44,7 +44,17 @@ function SubCarousel({ data, title, mediaType }: {data: GetMovieResults | GetTVR
         >
           {data.results.slice(0, MAX_PAGES * PAGE_IMAGES + 1).map((e, index) => (
             <div key={index} className="slider" onClick={() => onClickDetail(e.id)}>
-             <img loading="lazy" width="auto" height="100%" className={data?.results.length > PAGE_IMAGES ? "subCarouselImage" : "insufficientSlidesImage"} src={`https://image.tmdb.org/t/p/w300/${e.backdrop_path}`} alt="poster" />
+              <img loading="lazy" width="auto" height="100%"
+                        className={data?.results.length > PAGE_IMAGES ? "subCarouselImage" : "insufficientSlidesImage"}
+                        srcSet={`
+                            https://image.tmdb.org/t/p/w300/${e.backdrop_path} 300w,
+                            https://image.tmdb.org/t/p/w780/${e.backdrop_path} 780w,
+                            https://image.tmdb.org/t/p/w1280/${e.backdrop_path} 1280w
+                          `}
+                          sizes="(max-width: 767px) 300px, 
+                                (max-width: 1023px) 780px, 
+                                1280px"
+                          src={`https://image.tmdb.org/t/p/w780/${e.backdrop_path}`}  alt="poster" />
             </div>
           ))}
       </Carousel>
