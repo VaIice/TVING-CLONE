@@ -48,7 +48,7 @@ function MainCarousel({ data }: {data: GetMovieResults }) {
           >
             {data?.results.slice(0, MAX_UPCOMING_INDEX + 1).map((e, index) => (
               <div key={index} className={`${movieUpcomingCurrentIndex === index ? "activePosterBox" : "inactivePosterBox"}`} onClick={() => onClickDetail(e.id)}>
-                <img className={(movieUpcomingCurrentIndex <= MAX_UPCOMING_INDEX / 2 && index === MAX_UPCOMING_INDEX)
+                <img loading="lazy" className={(movieUpcomingCurrentIndex <= MAX_UPCOMING_INDEX / 2 && index === MAX_UPCOMING_INDEX)
                   || (movieUpcomingCurrentIndex >= MAX_UPCOMING_INDEX / 2 && index === 0) ? "nonePoster" : "poster"} src={`https://image.tmdb.org/t/p/w1280/${e.backdrop_path}`} alt="poster" />
                 <span className="posterTitle">{e.title}</span>
               </div>

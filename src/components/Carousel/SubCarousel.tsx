@@ -40,11 +40,11 @@ function SubCarousel({ data, title, mediaType }: {data: GetMovieResults | GetTVR
           customLeftArrow={<div className="carouselArrowPrevBox"><i className={`fa-solid fa-chevron-left carouselArrow`}></i></div>}
           customRightArrow={<div className="carouselArrowNextBox"><i className={`fa-solid fa-chevron-right carouselArrow`}></i></div>}
           infinite={false}
-          dotListClass="custom-dot-list-style"
+        dotListClass="custom-dot-list-style"
         >
           {data.results.slice(0, MAX_PAGES * PAGE_IMAGES + 1).map((e, index) => (
             <div key={index} className="slider" onClick={() => onClickDetail(e.id)}>
-             <img className={data?.results.length > PAGE_IMAGES ? "subCarouselImage" : "insufficientSlidesImage"} src={`https://image.tmdb.org/t/p/w300/${e.backdrop_path}`} alt="poster" />
+             <img loading="lazy" width="auto" height="100%" className={data?.results.length > PAGE_IMAGES ? "subCarouselImage" : "insufficientSlidesImage"} src={`https://image.tmdb.org/t/p/w300/${e.backdrop_path}`} alt="poster" />
             </div>
           ))}
       </Carousel>
