@@ -10,7 +10,7 @@ function TVTrend() {
     staleTime: 5 * 60 * 1000,
   });
 
-  const title = "가장 인기 많은 시리즈";
+  const title = "급상승 시리즈";
   
   if (!isLoading && data?.results) {
     return (

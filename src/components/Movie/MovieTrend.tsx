@@ -11,7 +11,7 @@ function MovieTrend() {
     staleTime: 5 * 60 * 1000,
   });
 
-  const title = "가장 인기 많은 영화";
+  const title = "급상승 영화";
   
   if (!isLoading && data?.results) {
     return (

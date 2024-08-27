@@ -13,12 +13,12 @@ function MovieUpcoming() {
   if (isLoading) {
     return (
       <SkeletonMainCarousel />
-    )
+    );
   }
   else if (!isLoading && data?.results) {
     return (
       <MainCarousel data={data} />
-    )
+    );
   }
   return null;
 }

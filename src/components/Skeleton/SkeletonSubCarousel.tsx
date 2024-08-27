@@ -27,8 +27,10 @@ function SkeletonSubCarousel({ title }: { title: string }) {
           dotListClass="custom-dot-list-style"
         >
           {Array.from({ length: 20 }).map((e, index) => (
-            <div key={index} className="slider">
-                <Skeleton className="slider-image"/>
+            <div key={index} className="slider" style={{ position: 'relative', aspectRatio: '16/9' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+                <Skeleton height="100%" />
+              </div>
             </div>
           ))}
       </Carousel>

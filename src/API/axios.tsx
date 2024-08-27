@@ -38,10 +38,6 @@ export interface GetTVDetail extends TV {
     genres: Genre[]
 }
 
-interface Trailer {
-
-}
-
 export interface GetMovieResults {
   results: Movie[];
 }

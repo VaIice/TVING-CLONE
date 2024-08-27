@@ -5,7 +5,7 @@ import SubCarousel from "../Carousel/SubCarousel";
 
 function MoviePopular() {
 
-  const { data, isLoading, isFetching } = useQuery<GetMovieResults>({
+  const { data, isLoading } = useQuery<GetMovieResults>({
     queryKey: ['MoviePopular'],
     queryFn: () => getMoviePopular(),
     staleTime: 5 * 60 * 1000

@@ -73,36 +73,35 @@ function RecentSearch() {
   return text;
   };
   
-  return (
-    <div className="recentSearchBox">
-      {searchTextInput.length > 0 ? (
-        !isLoadingMovie && dataMovie?.results && dataMovie.results.length > 0? (
-          <Carousel
-            responsive={responsive}
-            autoPlay={false}
-            draggable={false}
-            showDots={true}
-            customLeftArrow={<div className="carouselArrowPrevBox"><i className={`fa-solid fa-chevron-left carouselArrow`}></i></div>}
-            customRightArrow={<div className="carouselArrowNextBox"><i className={`fa-solid fa-chevron-right carouselArrow`}></i></div>}
-            infinite={false}
-          >
+return (
+  <div className="recentSearchBox">
+    {searchTextInput.length > 0 ? (
+      !isLoadingMovie && dataMovie?.results && dataMovie.results.length > 0 ? (
+        <Carousel
+          responsive={responsive}
+          autoPlay={false}
+          draggable={false}
+          showDots={true}
+          customLeftArrow={<div className="carouselArrowPrevBox"><i className={`fa-solid fa-chevron-left carouselArrow`}></i></div>}
+          customRightArrow={<div className="carouselArrowNextBox"><i className={`fa-solid fa-chevron-right carouselArrow`}></i></div>}
+          infinite={false}
+        >
           {dataMovie?.results
-            ?.filter((e) => e.backdrop_path)  // backdrop_path가 null이 아닌 항목만 포함
-            .slice(0, 5)  // 최대 5개의 항목만 포함
+            ?.filter((e) => e.backdrop_path)
+            .slice(0, 5)
             .map((e, index) => (
-              <div key={index} className="slider" onClick={() => onClickDetail(e.id)}>
+              <div key={index} className="slider" onClick={() => onClickDetail(e.id)}>                
                 <img
                   className={dataMovie?.results?.length >= 5 ? "recentSearchImageFull" : "recentSearchImage"}
-                  src={`https://image.tmdb.org/t/p/original/${e.backdrop_path}`}
+                  src={`https://image.tmdb.org/t/p/w300/${e.backdrop_path}`}
                   alt="poster"
                 />
-                                                  <div className={dataMovie?.results?.length >= 5 ? "recentSearchTitleImageFull" : "recentSearchTitle"}>
-                    {highlightText(e.title, searchTextInput)}
-                  </div>
-                  </div>
+                <div className={dataMovie?.results?.length >= 5 ? "recentSearchTitleImageFull" : "recentSearchTitle"}>
+                  {highlightText(e.title, searchTextInput)}
+                </div>
+              </div>
             ))}
-            </Carousel>
-        ) : null
+        </Carousel>
       ) : (
         <>
           <span className="searchListTitle">최근 검색어</span>
@@ -126,9 +125,33 @@ function RecentSearch() {
             )}
           </ul>
         </>
-      )}
-    </div>
-  );
+      )
+    ) : (
+      <>
+        <span className="searchListTitle">최근 검색어</span>
+        {recentSearchList.length !== 0 ? (
+          <span className="searchDeleteAllData" onClick={onClickSearchDeleteAllDataXIcon}>
+            모두 지우기<i className="fa-solid fa-xmark searchDeleteAllDataXIcon"></i>
+          </span>
+        ) : null}
+        <ul>
+          {recentSearchList.length > 0 ? (
+            <div>
+              {recentSearchList.map((searchData: string, index: number) => (
+                <div className="searchList" key={index}>
+                  <span onClick={() => onClickRecentSearchList(searchData)} className="searchData">{searchData}</span>
+                  <i className="fa-solid fa-xmark searchDataXIcon" onClick={() => onClickSearchDataXIcon(index)} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <li className="searchList">검색 내용이 없습니다.</li>
+          )}
+        </ul>
+      </>
+    )}
+  </div>
+);
 }
 
 

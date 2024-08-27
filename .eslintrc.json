@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "rules": {
+    "semi": ["warn", "always"],  // 세미콜론 사용을 경고로 설정
+    "quotes": ["warn", "single"] // 작은따옴표 사용을 경고로 설정
+  }
+}

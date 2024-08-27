@@ -5,7 +5,6 @@ import SeriesPage from './pages/SeriesPage';
 import MoviePage from './pages/MoviePage';
 import DetailPage from './pages/DetailPage';
 import Header from './components/Layout/Header';
-import Footer from './components/Layout/Footer';
 
 function App() {
   return (
