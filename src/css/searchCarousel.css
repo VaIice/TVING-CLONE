@@ -1,0 +1,7 @@
+.react-multi-carousel-item:first-child {
+  margin-left: 5vw;
+}
+
+.react-multi-carousel-item:last-child {
+  margin-right: 5vw;
+}

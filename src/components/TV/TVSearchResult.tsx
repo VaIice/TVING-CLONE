@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { RootState } from "../../store/store";
 import { GetTVResults, getTVSearch } from '../../API/axios';
 import { useQuery } from "@tanstack/react-query";
-import SubCarousel from '../Carousel/SubCarousel';
 import SkeletonSubCarousel from '../Skeleton/SkeletonSubCarousel';
+import SearchCarousel from '../Carousel/SearchCarousel';
 
 function TVSearchResult() {
 
@@ -23,7 +23,7 @@ function TVSearchResult() {
 
   if (!isLoading && data?.results) {
     return (
-      <SubCarousel data={data} title={title} mediaType="M"/>
+      <SearchCarousel data={data} title={title} mediaType="M"/>
     );
   }
 

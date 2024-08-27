@@ -4,6 +4,7 @@ import '../../css/detail.css'
 import { useLocation } from 'react-router-dom';
 import SkeletonDetail from "../Skeleton/SkeletonDetail";
 import Skeleton from "react-loading-skeleton";
+import { useState } from "react";
 
 function MovieDetail() {
   const pathname = useLocation().pathname;
@@ -38,15 +39,16 @@ function MovieDetail() {
     return 0;
   }
 
- if (isLoading) {
-  return (
-   <SkeletonDetail />
-  )
- }
- 
- else if (!isLoading && data) {
+  const [loadImage, setLoadImage] = useState(false);
+
+  function handleImage() {
+    setLoadImage(true);
+  }
+
+ if (!isLoading && data) {
   return (
    <div className="detailBox">
+      <>
        <div className="detailLeftBox">
         <div className="detailTitle">{getTitle(data)}</div>
         <div className="detailAdult">전체{data?.adult}</div>
@@ -58,8 +60,13 @@ function MovieDetail() {
         <div className="detailElement">{getRuntime(data)}</div>
         <div className="detailOverview">{data?.overview}</div>
        </div>
-       <div className="detailRightBox">
-        <img className="detailPoster" alt="poster"
+        <div className="detailRightBox">
+          {!loadImage &&
+              <div style={{ position: 'absolute', top: "7%", right: "6%", width: '17.8%', height: '79%' }}>
+                <Skeleton height="100%" />
+              </div>
+          }
+          <img className="detailPoster" alt="poster"
             srcSet={`
               https://image.tmdb.org/t/p/w342/${data?.poster_path} 342w,
               https://image.tmdb.org/t/p/w500/${data?.poster_path} 500w,
@@ -68,12 +75,22 @@ function MovieDetail() {
             sizes="(max-width: 767px) 342px, 
                   (max-width: 1023px) 500px, 
                   780px"
-            src={`https://image.tmdb.org/t/p/w780/${data?.poster_path}`} />
+            src={`https://image.tmdb.org/t/p/w780/${data?.poster_path}`}
+              style={{
+                opacity: loadImage? 1 : 0
+              }}            
+            onLoad={handleImage}
+          />
        </div>
-    </div>
+      </>
+   </div>
   )
  }
- return null;
+ else {
+    return (
+      <SkeletonDetail />
+    )
+}
 }
 
 export default MovieDetail;

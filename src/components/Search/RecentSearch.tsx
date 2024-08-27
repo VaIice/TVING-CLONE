@@ -7,9 +7,9 @@ import { useQuery } from '@tanstack/react-query';
 import "../../css/carousel.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useNavigate } from "react-router-dom";
-import "../../css/carousel.css";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Skeleton from 'react-loading-skeleton';
 
 function RecentSearch() {
   const recentSearchList = useSelector((state: RootState) => state.recentSearchList);
@@ -73,6 +73,23 @@ function RecentSearch() {
   return text;
   };
   
+  const [loadedImages, setLoadedImages] = useState<boolean[]>([]);
+
+  useEffect(() => {
+    if (dataMovie?.results) {
+      const totalImagesCount = dataMovie.results.length;
+      setLoadedImages(new Array(totalImagesCount).fill(false));
+    }
+  }, [dataMovie]);
+  
+  const handleImageLoad = (index: number) => {
+    setLoadedImages(prev => {
+      const newLoadedImages = [...prev];
+      newLoadedImages[index] = true;
+      return newLoadedImages;
+    });
+  };
+  
 return (
   <div className="recentSearchBox">
     {searchTextInput.length > 0 ? (
@@ -90,41 +107,29 @@ return (
             ?.filter((e) => e.backdrop_path)
             .slice(0, 5)
             .map((e, index) => (
-              <div key={index} className="slider" onClick={() => onClickDetail(e.id)}>                
-                <img
-                  className={dataMovie?.results?.length >= 5 ? "recentSearchImageFull" : "recentSearchImage"}
-                  src={`https://image.tmdb.org/t/p/w300/${e.backdrop_path}`}
-                  alt="poster"
+              <>
+                <div key={index} className="slider" onClick={() => onClickDetail(e.id)}>                
+                  {
+                    loadedImages[index] && <div style={{ position: 'absolute', top: "-5px", left: "-4vw", width: '100%', height: '9vw' }}>
+                      <Skeleton height="100%" />
+                    </div>
+                  }
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300/${e.backdrop_path}`}
+                    alt="poster"
+                    style={{marginLeft: "-4vw"}}
+                    onLoad={() => handleImageLoad(index)
+                  }
                 />
-                <div className={dataMovie?.results?.length >= 5 ? "recentSearchTitleImageFull" : "recentSearchTitle"}>
+                <div className={dataMovie?.results?.length >= 5 ? "recentSearchTitleImageFull" : "recentSearchTitle"} style={{marginLeft: "-4vw"}}>
                   {highlightText(e.title, searchTextInput)}
                 </div>
-              </div>
+                </div>
+              </>
             ))}
         </Carousel>
       ) : (
-        <>
-          <span className="searchListTitle">최근 검색어</span>
-          {recentSearchList.length !== 0 ? (
-            <span className="searchDeleteAllData" onClick={onClickSearchDeleteAllDataXIcon}>
-              모두 지우기<i className="fa-solid fa-xmark searchDeleteAllDataXIcon"></i>
-            </span>
-          ) : null}
-          <ul>
-            {recentSearchList.length > 0 ? (
-              <div>
-                {recentSearchList.map((searchData: string, index: number) => (
-                  <div className="searchList" key={index}>
-                    <span onClick={() => onClickRecentSearchList(searchData)} className="searchData">{searchData}</span>
-                    <i className="fa-solid fa-xmark searchDataXIcon" onClick={() => onClickSearchDataXIcon(index)} />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <li className="searchList">검색 내용이 없습니다.</li>
-            )}
-          </ul>
-        </>
+        null
       )
     ) : (
       <>

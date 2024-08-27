@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useNavigate } from 'react-router-dom';
 import { GetMovieResults, GetTVResults } from '../../API/axios';
-import "../../css/carousel.css";
+import "../../css/searchCarousel.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Skeleton from 'react-loading-skeleton';
 
-function SubCarousel({ data, title, mediaType }: { data: GetMovieResults | GetTVResults, title: string, mediaType: "M" | "S"}) {
-
-  const MAX_PAGES = 5;
-  const PAGE_IMAGES = 5;
-  const totalImages = Math.min(data.results.length, MAX_PAGES * PAGE_IMAGES + 1);
+function SearchCarousel({ data, title, mediaType }: { data: GetMovieResults | GetTVResults, title: string, mediaType: "M" | "S"}) {
 
   const responsive = {
     all: {
@@ -30,6 +26,8 @@ function SubCarousel({ data, title, mediaType }: { data: GetMovieResults | GetTV
       navigator(`/detail/S${id}`);
     }
   }
+
+ const totalImages = 5;
 
   const [loadedImages, setLoadedImages] = useState<boolean[]>(new Array(totalImages).fill(false));
 
@@ -91,4 +89,4 @@ function SubCarousel({ data, title, mediaType }: { data: GetMovieResults | GetTV
   );
 }
 
-export default SubCarousel;
+export default SearchCarousel;

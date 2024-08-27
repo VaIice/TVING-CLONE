@@ -3,6 +3,8 @@ import { GetTVDetail, getTVDetail } from "../../API/axios";
 import '../../css/detail.css'
 import { useLocation } from 'react-router-dom';
 import SkeletonDetail from "../Skeleton/SkeletonDetail";
+import Skeleton from "react-loading-skeleton";
+import React, { useState } from 'react';
 
 function TVDetail() {
   const pathname = useLocation().pathname;
@@ -37,11 +39,12 @@ function TVDetail() {
     return 0;
   }
 
-  if (isLoading) {
-    return (
-      <SkeletonDetail />
-    )
+  const [loadImage, setLoadImage] = useState(false);
+
+  function handleImage() {
+    setLoadImage(true);
   }
+
  if (!isLoading && data) {
   return (
    <div className="detailBox">
@@ -57,7 +60,12 @@ function TVDetail() {
         <div className="detailElement">{getRuntime(data)}</div>
         <div className="detailOverview">{data?.overview}</div>
        </div>
-       <div className="detailRightBox">
+        <div className="detailRightBox">
+          {!loadImage &&
+              <div style={{ position: 'absolute', top: "7%", right: "6%", width: '17.8%', height: '79%' }}>
+                <Skeleton height="100%" />
+              </div>
+          }
           <img className="detailPoster" alt="poster"
             srcSet={`
               https://image.tmdb.org/t/p/w342/${data?.poster_path} 342w,
@@ -67,13 +75,22 @@ function TVDetail() {
             sizes="(max-width: 767px) 342px, 
                   (max-width: 1023px) 500px, 
                   780px"
-            src={`https://image.tmdb.org/t/p/w780/${data?.poster_path}`}/>
+            src={`https://image.tmdb.org/t/p/w780/${data?.poster_path}`}
+              style={{
+                opacity: loadImage? 1 : 0
+              }}            
+            onLoad={handleImage}
+          />
        </div>
       </>
    </div>
   )
  }
- return null;
+ else {
+    return (
+      <SkeletonDetail />
+    )
+}
 }
 
 export default TVDetail;
