@@ -1,20 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
 import { GetMovieDetail, getMovieDetail } from "../../API/axios";
 import '../../css/detail.css'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import SkeletonDetail from "../Skeleton/SkeletonDetail";
 import Skeleton from "react-loading-skeleton";
 import { useState } from "react";
 
 function MovieDetail() {
-  const pathname = useLocation().pathname;
- type resultType = GetMovieDetail;
-  const id: number = parseInt(pathname.replace("/detail/M", ""));
-  const queryKey = ['MovieDetail', id] ;
-  const queryFn = getMovieDetail(id);
-  const { data, isLoading } = useQuery<resultType>({
-    queryKey: queryKey,
-    queryFn: () => queryFn
+  const navigator = useNavigate();
+  const { id: paramsId } = useParams<{ id: string }>();
+
+  const id = paramsId ? parseInt(paramsId.replace("M", ""), 10) : undefined;
+
+  const { data, isLoading, error } = useQuery<GetMovieDetail>({
+    queryKey: ['MovieDetail', id],
+    queryFn: () => {
+      if (id === undefined || isNaN(id)) {
+        return Promise.reject(new Error("ID is invalid"));
+      }
+      return getMovieDetail(id);
+    },
+    enabled: id !== undefined
   });
 
 
@@ -39,6 +45,10 @@ function MovieDetail() {
     return 0;
   }
 
+  function goToTrailer() {
+    navigator(`/detail/trailer/M${id}`)
+  }  
+
   const [loadImage, setLoadImage] = useState(false);
 
   function handleImage() {
@@ -57,8 +67,9 @@ function MovieDetail() {
          data?.genres[0]?.name ?
           <div className="detailElement">{data?.genres[0]?.name}</div> : <></>
         }
-        <div className="detailElement">{getRuntime(data)}</div>
-        <div className="detailOverview">{data?.overview}</div>
+          <div className="detailElement">{getRuntime(data)}</div>
+          <button className="detailButton" onClick={goToTrailer}><i className="fa-solid fa-play" style={{marginRight: "0.5vw"}}></i> 예고편 시청하기</button>
+          <div className="detailOverview">{data?.overview}</div>
        </div>
         <div className="detailRightBox">
           {!loadImage &&

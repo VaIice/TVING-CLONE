@@ -63,6 +63,23 @@
   font-weight: bold;
 }
 
+.detailButton {
+  background-color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 2vh 1.5vw;
+  display: block;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border: none;
+  cursor: pointer;
+}
+
+.detailButton:focus {
+  border: none;
+}
+
 .detailElementSkeleton {
   display: inline-block;
   margin-right: 0.5vw;
@@ -116,4 +133,11 @@
   margin-top: 4.5vh;
   padding-bottom: 5%;
   width: 20%;
+}
+
+.trailerBox {
+  margin: auto;
+  aspect-ratio: 16/9;
+  width: 90%;
+  max-height: 80vh;
 }

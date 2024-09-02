@@ -23,6 +23,32 @@ export interface GetMovieDetail extends Movie {
     genres: Genre[]
 }
 
+interface Trailer {
+  key: string;
+  site: string;
+}
+
+export interface GetTrailer {
+  id: number;
+  results: Trailer[];
+}
+
+export const getMovieTrailer = async (id: number) => {
+  const response = await fetch(
+    `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`
+  );
+  const json = await response.json();
+  return json;
+};
+
+export const getTVTrailer = async (id?: number) => {
+  const response = await fetch(
+    `${BASE_URL}/tv/${id}/videos?api_key=${API_KEY}`
+  );
+  const json = await response.json();
+  return json;
+};
+
 interface TV {
       backdrop_path: string,
       id: number,

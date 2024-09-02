@@ -9,7 +9,7 @@ import { RootState } from "../store/store";
 import MovieDetail from "../components/Movie/MovieDetail";
 import TVDetail from "../components/TV/TVDetail";
 
-function DetailPage() {
+function TrailerPage() {
   const isClickedSearchIcon= useSelector( (state :RootState) => state.isClickedSearchIcon);
   const { pathname } = useLocation();
 
@@ -38,4 +38,4 @@ return (
 )
 }
 
-export default DetailPage;
+export default TrailerPage;
