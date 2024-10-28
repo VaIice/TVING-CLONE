@@ -2,11 +2,14 @@
   border-radius: 10px;
 }
 
-.activePosterBox,
-.inactivePosterBox {
+.posterBox{
   cursor: pointer;
   position: relative;
   filter: brightness(0.9);
+  width: '90%';
+  position: 'relative';
+  aspect-ratio: '16/9';
+  margin: 'auto'
 }
 
 .PosterBox-image {
@@ -15,10 +18,6 @@
   border-radius: 5px;
   cursor: pointer;
   background-color: #242424;
-}
-
-.inactivePosterBox {
-  filter: brightness(0.4);
 }
 
 .slick-prev {
@@ -73,15 +72,18 @@
   position: absolute;
   z-index: 1;
   color: white;
-  font-size: calc(2rem + 3vw);
+  font-size: calc(4.5rem);
   font-weight: bold;
-  top: 70%;
+  top: 75%;
   left: 5%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;      
 }
 
 .slider {
   margin: 15px 8px 0 8px;
-  height: 90%;
   position: relative;
 }
 
@@ -93,7 +95,7 @@
 }
 
 .slider:hover .subCarouselImage {
-  transform: translateY(-10px); /* move image up by 2px on hover */
+  transform: translateY(-10px);
 }
 
 .react-loading-skeleton {
@@ -115,7 +117,7 @@
 }
 
 .react-multi-carousel-item:last-child {
-  margin-right: calc(1.5% - 5vw);
+  margin-right: calc(2.6%);
 }
 
 .insufficientSlidesImage {
@@ -162,6 +164,10 @@
   z-index: -1;
 }
 
+.firstTitle {
+  margin-top: 0;
+}
+
 .carouselArrowPrevBox,
 .carouselArrowNextBox {
   position: absolute;
@@ -205,4 +211,104 @@
 .listTitle {
   color: white;
   font-size: calc(1.2rem + 0.25vw);
+}
+
+@media (max-width: 1027px) {
+  .posterTitle {
+    font-size: calc(2.5rem);
+  }
+
+  .carouselTitle {
+    font-size: 1.2rem;
+    margin-top: 5vh;
+  }
+
+  .carouselArrow {
+    color: white;
+    font-size: 1.5rem;
+    margin: auto;
+  }
+
+  .carouselArrowPrevBox,
+  .carouselArrowNextBox {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+  }  
+
+
+  .slider {
+    margin: 11px 8px 0 8px;
+    height: 90%;
+    position: relative;
+  }  
+
+  .dot {
+    width: 6px !important;
+    height: 6px !important;
+  } 
+
+  .arrowPrevBox,
+  .arrowNextBox,
+  .noneArrowPrevBox,
+  .noneArrowNextBox {
+    width: 10%;
+  }  
+
+  .posterBox {
+    width: 83% !important;
+  }  
+}
+
+@media (max-width: 767px) {
+  .posterTitle {
+    font-size: calc(1.2rem);
+    top: 70%;
+    left: 5%;    
+  }
+
+  .carouselTitle {
+    font-size: 0.9rem;
+    margin-top: 4vh;
+  }
+
+  .carouselArrow {
+    color: white;
+    font-size: 1rem;
+    margin: auto;
+  }
+
+  .carouselArrowPrevBox,
+  .carouselArrowNextBox {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+  }  
+
+
+  .slider {
+    margin: 9px 8px 0 8px;
+    position: relative;
+  }  
+
+  .dot {
+    width: 5px !important;
+    height: 5px !important;
+    margin: 0 5px !important;
+  } 
+
+  .arrowPrevBox,
+  .arrowNextBox,
+  .noneArrowPrevBox,
+  .noneArrowNextBox {
+    width: 10%;
+  }  
+
+  .posterBox {
+    width: 80% !important;
+  }  
+
+.arrow {
+    font-size: calc(1.5rem);
+  }  
 }

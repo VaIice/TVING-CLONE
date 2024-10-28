@@ -44,6 +44,11 @@ function MainCarousel({ data }: {data: GetMovieResults }) {
   };
   const [loadedImages, setLoadedImages] = useState<boolean[]>(new Array(MAX_UPCOMING_INDEX + 1).fill(false));
 
+  const handleIndicatorClick = (index: number) => {
+    setMovieUpcomingCurrentIndex(index);
+    console.log(index);
+  };
+  
   return (
     <>
       <Carousel
@@ -58,7 +63,7 @@ function MainCarousel({ data }: {data: GetMovieResults }) {
         {data?.results.slice(0, MAX_UPCOMING_INDEX + 1).map((e, index) => (
           <div 
             key={index} 
-            className={`${movieUpcomingCurrentIndex === index ? "activePosterBox" : "inactivePosterBox"}`} 
+            className='posterBox' 
             onClick={() => onClickDetail(e.id)}
             style={{ width: '90%', position: 'relative', aspectRatio: '16/9', margin: 'auto' }} 
           >

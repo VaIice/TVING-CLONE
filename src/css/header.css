@@ -1,5 +1,5 @@
 .navbar {
-  height: calc(4vw + 1.5vh);
+  height: calc(4vw + 3vh);
   padding-left: 3%;
   padding-right: 3%;
   display: flex;
@@ -45,10 +45,6 @@
   cursor: pointer;
 }
 
-.xIcon {
-  font-size: calc(1rem + 0.5vw);
-}
-
 .searchIcon:hover,
 .xIcon:hover {
   color: white;
@@ -59,12 +55,24 @@
   padding: 10px 12px 10px 12px;
   background-color: white;
   border-radius: 50%;
-  font-size: calc(1re);
-  margin-left: 2.5%;
+  font-size: calc(1rem);
+  margin-left: 2.5rem;
   margin-right: 3%;
   cursor: pointer;
 }
 
 .noneVisibility {
   visibility: hidden;
+}
+
+@media (max-width: 1027px) {
+  .profileIcon {
+    font-size: calc(0.8rem);
+    padding: 8px 9px 8px 9px;
+  }  
+
+  .searchIcon,
+  .xIcon {
+    font-size: calc(1.2rem);
+  }
 }

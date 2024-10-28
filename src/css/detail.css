@@ -141,3 +141,44 @@
   width: 90%;
   max-height: 80vh;
 }
+
+@media (max-width: 1067px) {
+  .detailTitle {
+    font-size: calc(2rem);
+  }
+
+  .detailTitleSkeleton {
+    font-size: calc(2rem);
+  }
+
+  .detailAdult {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: calc(0.8rem);
+  }
+
+  .detailElementBox {
+    display: flex;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+  }
+
+  .detailElement {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: calc(0.8rem);
+  }
+
+  .detailButton {
+    font-size: 0.9rem;
+    padding: 1vh 2vw;
+  }
+
+  .detailOverview {
+    font-size: 0.9rem;
+  }
+
+  .detailOverviewSkeleton {
+    font-size: 0.9rem;
+  }
+}
