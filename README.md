@@ -1,5 +1,7 @@
-## 📝 TVING
 TypeScript를 활용한 TVING 클론코딩 사이트
+
+## 📝 TVING
+###### TypeScript를 활용한 TVING 클론코딩 사이트
 
 ----
 
