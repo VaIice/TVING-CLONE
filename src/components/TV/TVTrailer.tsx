@@ -48,8 +48,8 @@ const TVTrailer = () => {
               <ReactPlayer
                 url={trailerUrl ? trailerUrl : undefined}
                 volume={0.3}
-                // control={false}
-                playing={true}
+                control={false}
+                playing={false}
                 width="100%"
                 height="100%"
                 onReady={handleReady}

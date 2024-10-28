@@ -5,8 +5,7 @@ import SeriesPage from './pages/SeriesPage';
 import MoviePage from './pages/MoviePage';
 import DetailPage from './pages/DetailPage';
 import Header from './components/Layout/Header';
-import MovieTrailer from './components/Movie/MovieTrailer';
-import TVTrailer from './components/TV/TVTrailer';
+import TrailerPage from './pages/TrailerPage';
 
 function App() {
   return (
@@ -19,7 +18,7 @@ function App() {
           <Route path="/series" element={<SeriesPage />} />
           <Route path="/search/:keyword" element={<SearchPage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
-          <Route path="/detail/trailer/:id" element={<TVTrailer />} />
+          <Route path="/detail/trailer/:id" element={<TrailerPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>   
       </BrowserRouter>

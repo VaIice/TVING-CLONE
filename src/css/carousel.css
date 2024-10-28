@@ -126,10 +126,6 @@
   margin-left: calc(5vw - 1.5%);
 }
 
-.react-multi-carousel-list {
-  overflow: visible !important;
-}
-
 .custom-dot-list-style {
   z-index: -1;
 }
