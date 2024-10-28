@@ -8,22 +8,22 @@ import SearchModal from "./SearchModal";
 
 function MainPage() {
   const isClickedSearchIcon= useSelector( (state :RootState) => state.isClickedSearchIcon);
-return (
-  <>
-      {
-          isClickedSearchIcon ? (
-            <SearchModal/>
-          ) : (
-            <>
-              <MovieUpcoming />
-              <MovieTrend />
-              <TVTrend />
-              <Footer />
-            </>
-          )
-      }
-  </>
-)
+  return (
+    <>
+        {
+            isClickedSearchIcon ? (
+              <SearchModal/>
+            ) : (
+              <>
+                <MovieUpcoming />
+                <MovieTrend />
+                <TVTrend />
+                <Footer />
+              </>
+            )
+        }
+    </>
+  )
 }
 
 export default MainPage;

@@ -72,6 +72,7 @@ ul {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 95%;
 }
 
 .recentSearchTitleImageFull {
@@ -80,4 +81,26 @@ ul {
 
 .highlight {
   color: #ff0000;
+}
+
+@media (max-width: 1067px) {
+  .searchDeleteAllData {
+    margin-left: 2%;
+  }
+
+  .recentSearchTitle,
+  .recentSearchTitleImageFull {
+    font-size: 1rem;
+  }  
+}
+
+@media (max-width: 767px) {
+  .searchDeleteAllData {
+    margin-left: 2%;
+  }
+
+  .recentSearchTitle,
+  .recentSearchTitleImageFull {
+    font-size: 0.85rem;
+  }  
 }

@@ -140,6 +140,21 @@
   aspect-ratio: 16/9;
   width: 90%;
   max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instruction {
+  color: white;
+}
+
+.skeletonTrailerBox {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+    aspect-ratio: 16/9;
 }
 
 @media (max-width: 1067px) {
@@ -181,4 +196,16 @@
   .detailOverviewSkeleton {
     font-size: 0.9rem;
   }
+
+  .skeletonTrailerBox {
+    aspect-ratio: 16/9;
+    top: 7%;
+  }  
+}
+
+@media (max-width: 767px) {
+  .skeletonTrailerBox {
+    aspect-ratio: 16/9;
+    top: 5%;
+  }  
 }

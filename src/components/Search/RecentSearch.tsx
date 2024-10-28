@@ -45,7 +45,8 @@ function RecentSearch() {
         slidesToSlide: 4.
       }
   };
-      const navigator = useNavigate();
+  
+  const navigator = useNavigate();
 
   function onClickDetail(id: number) {
     navigator(`/detail/M${id}`);
@@ -85,11 +86,11 @@ function RecentSearch() {
   const handleImageLoad = (index: number) => {
     setLoadedImages(prev => {
       const newLoadedImages = [...prev];
-      newLoadedImages[index] = true;
+      newLoadedImages[index] = false;
       return newLoadedImages;
     });
   };
-  
+
 return (
   <div className="recentSearchBox">
     {searchTextInput.length > 0 ? (

@@ -76,3 +76,24 @@
     font-size: calc(1.2rem);
   }
 }
+
+@media (max-width: 767px) {
+  .navbarList {
+    font-size: calc(0.9rem);
+  }  
+
+  .logo {
+    font-size: calc(0.9rem);
+  }  
+
+  .profileIcon {
+    font-size: calc(0.7rem);
+    padding: 7px 8px 7px 8px;
+    margin-left: 1.5rem;    
+  }  
+
+  .searchIcon,
+  .xIcon {
+    font-size: calc(1rem);
+  }  
+}

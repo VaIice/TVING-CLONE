@@ -263,7 +263,7 @@
 @media (max-width: 767px) {
   .posterTitle {
     font-size: calc(1.2rem);
-    top: 70%;
+    top: 60%;
     left: 5%;    
   }
 

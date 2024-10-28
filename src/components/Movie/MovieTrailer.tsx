@@ -22,36 +22,44 @@ const MovieTrailer = () => {
     enabled: id !== undefined
   });
   
-  const [trailerUrl, setTrailerUrl] = useState<string | null>(null);
+  const [trailerUrl, setTrailerUrl] = useState<string | null | undefined>(undefined);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setTrailerUrl(null);
+      setLoaded(false);
+    }, 5000);
+    
     if (data?.results && data.results.length > 0) {
       const videoKey = data.results[0].key;
       setTrailerUrl(`https://www.youtube.com/watch?v=${videoKey}`);
+      clearTimeout(timer);   
     }
+
+    return () => clearTimeout(timer);    
   }, [data]);
 
   const [loaded, setLoaded] = useState(true);
 
   const handleReady = () => {
     setLoaded(false);
-  }
+  };
 
- return (
-   <>
-     <div className="trailerBox">\
-       {loaded && <div style={{ position: 'absolute', top: '12.5%', left: '5%', width: '90%', height: '80vh' }}><Skeleton width={`100%`} height={`100%`} /></div>}
-              <ReactPlayer
-                url={trailerUrl ? trailerUrl : undefined}
-                volume={0.3}
-                control={false}
-                playing={true}
-                width="100%"
-                height="100%"
-                onReady={handleReady}
-              ></ReactPlayer>
-      </div>
-    </>
+  return (
+     <div className="trailerBox">
+       {loaded && <div className="skeletonTrailerBox"><Skeleton width={`100%`} height={`100%`} /></div>}
+       {trailerUrl ?
+         <ReactPlayer
+           url={trailerUrl}
+           volume={0.3}
+           control={false}
+           playing={false}
+           width="100%"
+           height="100%"
+           onReady={handleReady}
+         ></ReactPlayer> : <div className="instruction">미디어를 재생할 수 없습니다.</div>
+       }
+    </div>
   );
 };
 

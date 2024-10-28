@@ -64,3 +64,18 @@
 .footerIconBox i:nth-child(4) {
   padding: 10px 11px 10px 11px;
 }
+
+@media (max-width: 767px) {
+  .footerIconBox i {
+    font-size: calc(0.9rem);
+  }
+
+  .footerListBox li,
+  .footerTextBox span {
+    font-size: calc(0.85rem);
+  }  
+
+  .footerTextBox {
+    padding-top: 2vh;
+  }  
+}

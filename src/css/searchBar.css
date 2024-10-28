@@ -34,3 +34,17 @@
   right: 0;
   cursor: pointer;
 }
+
+@media (max-width: 1067px) {
+  .searchBarIcon {
+    font-size: calc(1.5rem);
+  }
+
+  #searchInput {
+    font-size: calc(1.3rem);
+  }
+
+  #searchInput::placeholder {
+    font-size: calc(1.3rem);
+  }  
+}
