@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TVING-CLONE/static/css/main.8224374f.css",
-    "main.js": "/TVING-CLONE/static/js/main.17daa1e3.js",
+    "main.css": "/TVING-CLONE/static/css/main.203dd4f0.css",
+    "main.js": "/TVING-CLONE/static/js/main.8f8ba5ec.js",
     "reactPlayerYouTube.js": "/TVING-CLONE/static/js/reactPlayerYouTube.30bbe1cc.chunk.js",
     "reactPlayerSoundCloud.js": "/TVING-CLONE/static/js/reactPlayerSoundCloud.a6cb8229.chunk.js",
     "reactPlayerVimeo.js": "/TVING-CLONE/static/js/reactPlayerVimeo.eca8657b.chunk.js",
@@ -21,8 +21,8 @@
     "static/media/revicons.ttf": "/TVING-CLONE/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/TVING-CLONE/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/TVING-CLONE/index.html",
-    "main.8224374f.css.map": "/TVING-CLONE/static/css/main.8224374f.css.map",
-    "main.17daa1e3.js.map": "/TVING-CLONE/static/js/main.17daa1e3.js.map",
+    "main.203dd4f0.css.map": "/TVING-CLONE/static/css/main.203dd4f0.css.map",
+    "main.8f8ba5ec.js.map": "/TVING-CLONE/static/js/main.8f8ba5ec.js.map",
     "reactPlayerYouTube.30bbe1cc.chunk.js.map": "/TVING-CLONE/static/js/reactPlayerYouTube.30bbe1cc.chunk.js.map",
     "reactPlayerSoundCloud.a6cb8229.chunk.js.map": "/TVING-CLONE/static/js/reactPlayerSoundCloud.a6cb8229.chunk.js.map",
     "reactPlayerVimeo.eca8657b.chunk.js.map": "/TVING-CLONE/static/js/reactPlayerVimeo.eca8657b.chunk.js.map",
@@ -40,7 +40,7 @@
     "453.48ddb1d0.chunk.js.map": "/TVING-CLONE/static/js/453.48ddb1d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8224374f.css",
-    "static/js/main.17daa1e3.js"
+    "static/css/main.203dd4f0.css",
+    "static/js/main.8f8ba5ec.js"
   ]
 }
