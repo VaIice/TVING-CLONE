@@ -1,4 +1,4 @@
-## 📝 TVING 클론코딩
+## 📝 TVING 클론코딩 (1人 프로젝트)
 ##### TypeScript를 활용한 TVING 클론코딩 사이트
 
 ----
