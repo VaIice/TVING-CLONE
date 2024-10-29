@@ -63,4 +63,4 @@
 
 ---
 #### 상세 정보 화면
-![image](https://github.com/VaIice/tving/assets/141003473/15c76952-6232-473c-8212-f59c402d666f)
+![](https://github.com/user-attachments/assets/9f613267-ca67-4329-b361-a8c3fc208ca0)
