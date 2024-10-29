@@ -64,3 +64,7 @@
 ---
 #### 상세 정보 화면
 ![](https://github.com/user-attachments/assets/9f613267-ca67-4329-b361-a8c3fc208ca0)
+
+---
+#### 예고편 미리보기
+![](https://github.com/user-attachments/assets/9b4e3503-12ae-4d65-8a96-0d0864a740ca)
