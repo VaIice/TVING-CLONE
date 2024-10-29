@@ -3,6 +3,11 @@ TypeScript를 활용한 TVING 클론코딩 사이트
 
 ----
 
+## 🌏 주소
+##### <https://vaiice.github.io/TVING-CLONE>
+
+----
+
 ## 🛠️ Tools and Technologies
 ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge)
