@@ -15,10 +15,21 @@ function RecentSearch() {
   const recentSearchList = useSelector((state: RootState) => state.recentSearchList);
   const searchTextInput = useSelector((state: RootState) => state.searchTextInput);
   const dispatch = useDispatch();
+ const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTextInput);
 
+ useEffect(() => {
+   const timer = setTimeout(() => {
+     setDebouncedSearchTerm(searchTextInput);
+   }, 500);
+
+   return () => {
+     clearTimeout(timer);
+   };
+ }, [searchTextInput]);
+  
   const { data: dataMovie, isLoading: isLoadingMovie } = useQuery<GetMovieResults>({
-    queryKey: ['MovieSearch', searchTextInput],
-    queryFn: () => getMovieSearch(searchTextInput)
+    queryKey: ['MovieSearch', debouncedSearchTerm],
+    queryFn: () => getMovieSearch(debouncedSearchTerm)
   });
   
   function onClickSearchDataXIcon(index: number) {
@@ -90,7 +101,7 @@ function RecentSearch() {
       return newLoadedImages;
     });
   };
-
+  
 return (
   <div className="recentSearchBox">
     {searchTextInput.length > 0 ? (
